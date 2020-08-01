@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+
+  <title>Show Details</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="show_details.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='show_details.css')}}">
+</head>
+
+<body>
+
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  <!-- Sidebar -->
+  <div class="sidebar-header">
+
+
+    <!-- <h3>bazaaR</h3> -->
+    <img class="main-img"  src="{{url_for('static',filename='images/icon2.png')}}"
+    alt="LOGO" />
+  </div>
+
+
+
+  <div class="mycontainer">
+
+    <div class="profile">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  <li class="{{category}}">{{ message }}</li>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+      <div class="row">
+
+        <div class="col">
+
+          <br>
+          <strong class="investor" style="font-size: 26px;"> <h1 class="investor_profile"><b>Student Details</b></h1></strong>
+          <table>
+            <tbody>
+              <tr>
+                <!-- <td><img class="myimg" src="icon.png" class=""></td> -->
+                <td class="" id="intro-box">
+                  <div class="label">
+
+                    <!-- <strong>Investor Profile</strong> -->
+                  </div>
+                  <!-- <div id="intro-box-info" class="value" style="padding-top:3px;">
+
+
+                  </div> -->
+                </td>
+              </tr>
+              <br>
+              <br>
+              <tr><h3><b>Enrolment Number :</b> &nbsp&nbsp<i>{{enrol}}</i></h3></tr>
+              <tr><h3><b>Name :</b> &nbsp&nbsp<i>{{ name}}</i></h3></tr>
+              <tr><h3><b>Room Number : </b>&nbsp&nbsp<i>{{ room_number}}</i></h3></tr>
+              <tr><h3><b>Contact : </b>&nbsp&nbsp<i>{{ contact}}</i></h3></tr>
+              <tr><h3><b>Parent's Contact : </b>&nbsp&nbsp<i>{{ parent_contact}}</i></h3></tr>
+
+
+            </tbody>
+          </table> <br>
+
+          <a href="main"><button type="button" class="btn btn-outline-light btn-lg Download-button"> Go to Home</button></a>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+
+    <!-- <div Class="activity">
+      <h2>STUDENT ACTIVITY </h2>
+      <br>
+      <h5>Student Last 5 entries</h5>
+      <br>
+      <table class="table1">
+        <tbody>
+
+
+          <tr>
+
+            <td class="txt">Gain</th>
+            <td class="num">Change</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td class="txt"><a href="" title="AMAZON Inc.">AMAZON</a></td>
+            <td class="num">111111111</td>
+            <td class="num2"><a href="">Trade</a></td>
+          </tr>
+          <tr>
+            <td class="txt"><a href="" title="GOOGLE Inc.">GOOGLE</a></td>
+            <td class="num">1111111</td>
+            <td class="num2"><a href="">Trade</a></td>
+          </tr>
+          <tr>
+            <td class="txt"><a href="" title="ALPHABET Ltd.">ALPHABET</a></td>
+            <td class="num">111111</td>
+            <td class="num2"><a href="">Trade</a></td>
+          </tr>
+          <tr>
+            <td class="txt"><a href="" title="FLIPKART Inc">FLIPKART</a></td>
+            <td class="num">111111</td>
+            <td class="num2"><a href="">Trade</a></td>
+          </tr>
+          <tr>
+            <td class="txt"><a href="" title="SAPLAB Inc.">SAPLABS</a></td>
+            <td class="num">111111</td>
+            <td class="num2"></a><a href="">Trade</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <br><br><br>
+
+
+    </div> -->
+
+  </div>
+
+  <!-- Footer -->
+
+
+
+  <section id="footer">
+    <div class="footer-note">
+      <!-- <i class="footer-icon fab fa-twitter fa-2x"></i>
+      <i class="footer-icon fab fa-facebook-f fa-2x"></i>
+      <i class="footer-icon fab fa-instagram fa-2x"></i> -->
+      <!-- <i class="footer-icon fas fa-envelope fa-2x"></i> -->
+      <p style="color:#fff">© Copyright 2019 Entry-Exit System</p>
+    </div>
+</section>
+
+</body>
+
+</html>

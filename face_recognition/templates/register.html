@@ -1,0 +1,161 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Register</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link href="register.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='register.css')}}">
+
+</head>
+
+<body>
+
+
+  <section class="main">
+
+    <div class="test">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+      <div class="register">
+        
+
+
+
+          
+
+        <div class="content-section">
+        <form method="POST" action="">
+
+
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+
+              <legend class="border-bottom mb-4"><h2 style="color: #DAA520;">Register</h2></legend>
+                               
+                <div class="form-group" style='color:white'><h3><b>
+                    {{ form.name.label(class="form-control-label") }}
+
+                    {% if form.name.errors %}
+                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-lg") }}
+                    {% endif %}</b></h3>
+                </div>
+
+
+                <div class="form-group"  style='color:white'><h3><b>
+                    {{ form.enrol_number.label(class="form-control-label") }}
+
+                    {% if form.enrol_number.errors %}
+                        {{ form.enrol_number(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.enrol_number.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.enrol_number(class="form-control form-control-lg") }}
+                    {% endif %}</b></h3>
+                </div>
+
+
+                <div class="form-group"  style='color:white'><h3><b>
+                    {{ form.contact.label(class="form-control-label") }}
+                    {% if form.contact.errors %}
+                        {{ form.contact(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.contact.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.contact(class="form-control form-control-lg") }}
+                    {% endif %}</b></h3>
+                </div>
+
+
+                <div class="form-group"  style='color:white'><h3><b>
+                    {{ form.parent_contact.label(class="form-control-label") }}
+                    {% if form.parent_contact.errors %}
+                        {{ form.parent_contact(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.parent_contact.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.parent_contact(class="form-control form-control-lg") }}
+                    {% endif %}</b></h3>
+                </div>
+
+
+                <div class="form-group"  style='color:white'><h3><b>
+                    {{ form.room_number.label(class="form-control-label") }}
+                    {% if form.room_number.errors %}
+                        {{ form.room_number(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.room_number.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.room_number(class="form-control form-control-lg") }}
+                    {% endif %}</b></h3>
+                </div>
+
+            </fieldset>
+
+
+            <div class="form-group"  style='color:white'><h3><b>
+                {{ form.submit(class="btn btn-outline-info") }}</b></h3>
+            </div>
+        </form>
+
+       <!-- <div>
+        Already have an account?<a href="login" style="color: yellow;">&nbsp;Log In</a>
+       </div> -->
+
+
+       
+
+          <!-- <div id="msg">Congratulations You Sign Up successfully!!</div>
+          <script>
+            function myFunction() {
+              var x = document.getElementById("msg");
+              x.className = "show";
+              setTimeout(function() {
+                x.className = x.className.replace("show", "");
+              }, 3000);
+            }
+          </script> -->
+
+        
+      </div>
+
+       </br></br>
+  
+
+    </div>
+
+   
+  </section>
+</body>
+
+</html>
